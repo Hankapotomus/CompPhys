@@ -19,6 +19,7 @@ def main ():
     T= np.array(Min) #turns the list into an array
     
     height= (((G*M*((T*60)**2)/(4*(math.pi)**2))**(1/3))-R)/1000
+    #this is the equation, with T multiplied by 60 to get the seconds, and /1000 at the end to get an answer in km
     
     height=  np.round([height], decimals = 0)
     #this rounds the answer to nearest kilometer
