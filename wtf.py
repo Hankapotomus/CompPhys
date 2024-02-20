@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Created on Tue Jan 30 13:08:35 2024
+Created on Tue Jan 30 20:07:41 2024
 
 @author: henrynelson
 """
@@ -26,36 +26,8 @@ def main ():
     for key in letters:
            enclist.append(codex[key])# appends enclist to include values                            #THIS DOESNT WORK num = (codex.get(key)) #numerical valuefor each original letter    
     encarray = np.array(enclist) #turns enclist into an array                                        #num.join() does not work!
-    print (encarray)  
-
-
-    codex2 = {y: x for x, y in codex.items()} #inverts the codex's keys and value
-   
   
-    
-    D= list(encarray+17)   #This is the line that decides the encription
+    D= (encarray+17)   #This is the line that decides the encription
     print(D)
-    Dlist=[]   #a new open list
-    for value in D:
-        if value > 57:  
-            value= value-57   #if the value is over 57, it returns back to the range of accepted values
-        (Dlist.append(codex2[value])) #Adds these new values to Dlist
-    
-    def convert(Dlist): 
-        new = "" 
-        for x in Dlist: 
-            new += x 
-        return new #turns the Dlist list of letters into a string
-    print(convert(Dlist)) 
-    
-   
-   
-
-
 if __name__ == '__main__':
     main()
-    
-    
-    
-    
-    

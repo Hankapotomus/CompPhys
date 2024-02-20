@@ -35,3 +35,6 @@ if __name__ == '__main__':
     
    if first == "file":
        T= input(str(rq.get("plaintextfile" )))
+       
+       if first == ("file"):
+          T = rq.get(str(input("file: ")))

@@ -12,41 +12,41 @@ def main ():
          "o": 15,"p": 16,"q": 17,"r": 18,"s": 19,"t": 20,"u": 21,"v": 22,"w": 23,"x": 24,"y": 25, "z": 26, " ":27, ",":28, ".":29, "?":30, "A": 31, "B": 32, "C": 33, "D": 34, "E": 35, "F": 36, "G": 37, "H": 38, "I": 39, "J": 40,"K": 41,"L": 42,"M": 43,"N": 44,
               "O": 45,"P": 46,"Q": 47,"R": 48,"S": 49,"T": 50,"U": 51, "V": 52,"W": 53,"X": 54,"Y": 55, "Z": 56, "!":57}
    
-    first = (input("message or file: "))
-    if first == ("file"):
-       T = open((str(input("file: "))), "r") #file input, reads it
+    firstmessage = (input("message or file: "))
+    if firstmessage == ("file"):
+       Text = open((str(input("file: "))), "r") #file input, reads it
 
-    if first == ("message"):  
-        T= input(str("Sentence to be encrypted:")) #sentence imput
+    if firstmessage == ("message"):  
+        Text= input(str("Sentence to be encrypted:")) #sentence imput
                                                                                             #letters =['"{}"' .format(letter) for letter in letters]
                                                                                                 #V = ("'{}'".format(H)) #puts each letter in quotes 
                                                                                                         #print(codex.get(V)) DOES NOT WORK, codex get doesnt take lists
-    enclist = [] #starts a new open list
-    letters = list([x for x in T])   #turns sentence into list of letters, 'x'
+    encryptionlist = [] #starts a new open list
+    letters = list([letter for letter in Text])   #turns sentence into list of letters, 'letter'
     for key in letters:
-           enclist.append(codex[key])# appends enclist to include values                            #THIS DOESNT WORK num = (codex.get(key)) #numerical valuefor each original letter    
-    encarray = np.array(enclist) #turns enclist into an array                                        #num.join() does not work!
-    print (encarray)  
+           encryptionlist.append(codex[key])# appends enclist to include values                            #THIS DOESNT WORK num = (codex.get(key)) #numerical valuefor each original letter    
+    encryptionarray = np.array(encryptionlist) #turns enclist into an array                                        #num.join() does not work!
+    print (encryptionarray)  
 
 
-    codex2 = {y: x for x, y in codex.items()} #inverts the codex's keys and value
+    reversecodex = {y: x for x, y in codex.items()} #inverts the codex's keys and value
    
   
     
-    D= list(encarray+17)   #This is the line that decides the encription
-    print(D)
-    Dlist=[]   #a new open list
-    for value in D:
+    GibberishNumbers= list(encryptionarray+17)   #This is the line that decides the encription
+    print(GibberishNumbers)
+    GibberishNumberslist=[]   #a new open list
+    for value in  GibberishNumbers:
         if value > 57:  
             value= value-57   #if the value is over 57, it returns back to the range of accepted values
-        (Dlist.append(codex2[value])) #Adds these new values to Dlist
+        ( GibberishNumberslist.append(reversecodex[value])) #Adds these new values to  GibberishNumberslist
     
-    def convert(Dlist): 
+    def convert( GibberishNumberslist): 
         new = "" 
-        for x in Dlist: 
+        for x in  GibberishNumberslist: 
             new += x 
-        return new #turns the Dlist list of letters into a string
-    print(convert(Dlist)) 
+        return new #turns the  GibberishNumberslist list of letters into a string
+    print(convert( GibberishNumberslist)) 
     
    
    
